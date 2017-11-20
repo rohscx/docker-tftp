@@ -17,7 +17,7 @@ RUN chown -R tftp /var/lib/tftpboot
 # Grant edit rights to tftp file and read access to folder
 RUN chmod 777 /etc/default/tftpd-hpa
 RUN chmod 777 /etc/default
-RUN chmod 777 /etc/init.d/tftpd-hpa
+
 #
 RUN sed -i "s/--secure/--secure --create/" /etc/default/tftp
 
