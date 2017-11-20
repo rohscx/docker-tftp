@@ -6,6 +6,7 @@ RUN apt-get update
 # Install TFTP Server
 RUN apt-get install tftpd-hpa -y
 RUN apt-get install sudo -y
+RUN apt-get install vim -y
 # Create TFTP config file
 RUN cp /etc/default/tftpd-hpa /etc/default/tftpd-hpa.ORIGINAL
 
