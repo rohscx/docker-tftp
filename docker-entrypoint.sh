@@ -45,9 +45,9 @@ initConfig() {
 
 
 start() {
-  i=0
+  i="0"
   sleep ${START_DELAY}
-  while [$i == 0]
+  while [$i -le 4]
   do
     sleep ${START_DELAY}
     echo "Cats on Everything..."
