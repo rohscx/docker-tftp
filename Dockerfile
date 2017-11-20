@@ -30,7 +30,7 @@ RUN chmod 777 /etc/default
 
 
 #
-RUN echo "ALL NOPASSWD= /etc/init.d/tftpd-hpa tftpd-hpa *" >> /etc/sudoers
+RUN echo "ALL NOPASSWD: /etc/init.d" >> /etc/sudoers
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
