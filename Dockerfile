@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install tftpd-hpa -y
 # Create TFTP config file
 RUN cp /etc/default/tftpd-hpa /etc/default/tftpd-hpa.ORIGINAL
-# Grant edit rights to tftp file
+# Grant edit rights to tftp file and read access to folder
 RUN chmod 777 /etc/default/tftpd-hpa
 RUN chmod -R 775 /etc/default/
 # Grant write access to tftp folder
