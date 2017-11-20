@@ -44,6 +44,7 @@ initConfig() {
 
 
 start() {
+  echo "TEST"
   i="0"
   sleep ${START_DELAY}
   while [$i -le 4]
