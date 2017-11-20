@@ -16,7 +16,7 @@ RUN chown -R tftp /var/lib/tftpboot
 
 # Grant edit rights to tftp file and read access to folder
 RUN chmod 777 /etc/default/tftpd-hpa
-RUN chmod +t /etc/default
+RUN chmod 777 /etc/default
 
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
