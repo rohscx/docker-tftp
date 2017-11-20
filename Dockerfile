@@ -19,7 +19,7 @@ RUN chmod 777 /etc/default/tftpd-hpa
 RUN chmod 777 /etc/default
 
 #
-RUN sed -i "s/--secure/--secure --create/" /etc/default/tftp
+RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
 
 # restart tftpd-hpa service
 RUN systemctl enable tftpd-hpa.service
