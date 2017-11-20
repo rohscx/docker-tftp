@@ -18,11 +18,11 @@ RUN chown -R tftp /var/lib/tftpboot
 RUN chmod 777 /etc/default/tftpd-hpa
 RUN chmod 777 /etc/default
 
-# restart tftpd-hpa service
-RUN service tftpd-hpa restart
-
 #
 RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
+
+# restart tftpd-hpa service
+RUN service tftpd-hpa restart
 
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
