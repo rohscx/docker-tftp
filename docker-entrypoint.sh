@@ -42,13 +42,8 @@ initConfig() {
 }
 
 start() {
-  i="0"
   sleep ${START_DELAY}
-  while [$i -le 4]
-  do
-    sleep ${START_DELAY}
-    echo "Cats on Everything..."
-  done
+  ping 8.8.8.8
 }
 
 # Evaluate arguments for build script.
