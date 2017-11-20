@@ -35,8 +35,6 @@ initConfig() {
   if [ ! "$(ls --ignore .keys --ignore .authoritative --ignore .recursive --ignore -A ${TFTP_USER_HOME})"  ]; then
     sed -i "s/--secure/--secure --create/" ${TFTP_CONFIG}
     touch ${TFTP_EDITED}
-    service tftpd-hpa restart
-    sleep 10
     echo "TFTP configuration initializing........."
   else
     echo "TFTP configuration already initialized........."
