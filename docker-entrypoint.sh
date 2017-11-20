@@ -41,9 +41,10 @@ initConfig() {
   fi
 }
 
-
+services() {
+  service tftpd-hpa restart
+}
 start() {
-  service tftpd-hpa start
   i="0"
   sleep ${START_DELAY}
   while [$i -le 4]
@@ -72,6 +73,7 @@ while getopts fhis flag; do
       ;;
     s)
       initConfig
+      services
       start
       exit
       ;;
