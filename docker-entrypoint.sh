@@ -7,7 +7,7 @@
 #
 # =====================================================================
 
-START_DELAY=5
+START_DELAY=300
 
 TFTP_EDITED=tftp_conf_edited
 TFTP_CONFIG=/etc/default/tftpd-hpa
@@ -46,7 +46,7 @@ initConfig() {
 
 start() {
   sleep ${START_DELAY}
-  ping 8.8.8.8
+
 }
 
 # Evaluate arguments for build script.
