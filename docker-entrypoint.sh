@@ -43,6 +43,7 @@ initConfig() {
 
 start() {
   sleep ${START_DELAY}
+  service tftpd-hpa restart
   top
 }
 
