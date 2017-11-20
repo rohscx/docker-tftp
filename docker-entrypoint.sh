@@ -43,8 +43,7 @@ initConfig() {
 
 start() {
   sleep ${START_DELAY}
-  sudo -s
-  service tftpd-hpa restart
+  sudo -s ; service tftpd-hpa restart
   top
 }
 
