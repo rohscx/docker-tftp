@@ -17,7 +17,7 @@ RUN chown -R tftp /var/lib/tftpboot
 # Grant edit rights to tftp file and read access to folder
 RUN chmod 777 /etc/default/tftpd-hpa
 RUN chmod 777 /etc/default
-
+RUN chmod 777 /etc/init.d/tftpd-hpa
 #
 RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
 
@@ -25,7 +25,7 @@ RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
 RUN service tftpd-hpa restart
 
 #
-RUN echo "tftp_user ALL = NOPASSWD: /etc/init.d.tftpd-hpa" 
+#RUN echo "tftp_user ALL = NOPASSWD: /etc/init.d/tftpd-hpa" >> /etc/sudoers
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
