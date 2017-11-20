@@ -8,7 +8,6 @@
 # =====================================================================
 
 START_DELAY=5
-i="0"
 
 TFTP_EDITED=tftp_conf_edited
 TFTP_CONFIG=/etc/default/tftpd-hpa
@@ -46,6 +45,7 @@ initConfig() {
 
 
 start() {
+  i=0
   sleep ${START_DELAY}
   while [$i = 0]
   do
