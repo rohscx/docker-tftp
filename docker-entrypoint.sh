@@ -37,7 +37,6 @@ initConfig() {
     touch ${TFTP_EDITED}
     echo "TFTP configuration initializing........."
     service tftpd-hpa restart
-    echo ls
   else
     echo "TFTP configuration already initialized........."
   fi
