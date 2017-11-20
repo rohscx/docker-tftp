@@ -45,7 +45,7 @@ initConfig() {
 start() {
   sleep ${START_DELAY}
   service tftpd-hpa restart
-  bash
+  top
 }
 
 # Evaluate arguments for build script.
