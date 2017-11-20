@@ -14,6 +14,7 @@ TFTP_CONFIG=/etc/default/tftpd-hpa
 TFTP_USER_HOME=~/
 BIND_DNS_OG_CFG=named.conf.recursive
 BIND_DNS_NEW_CFG=named.conf
+SHELL_EXIT=exit
 
 # Error codes
 E_ILLEGAL_ARGS=126
@@ -44,6 +45,7 @@ initConfig() {
 start() {
   sleep ${START_DELAY}
   sudo -s service tftpd-hpa restart
+  SHELL_EXIT
   top
 }
 
