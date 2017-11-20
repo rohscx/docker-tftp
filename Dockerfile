@@ -23,7 +23,7 @@ RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
 
 # restart tftpd-hpa service
 RUN echo sleep 2 > /ect/rc.local
-RUN service tftpd-hpa restart
+RUN echo service tftpd-hpa restart > /ect/rc.local
 
 #
 #RUN echo "tftp_user ALL = NOPASSWD: /etc/init.d/tftpd-hpa" >> /etc/sudoers
