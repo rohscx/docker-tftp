@@ -45,7 +45,7 @@ initConfig() {
 start() {
   sleep ${START_DELAY}
   sudo -s service tftpd-hpa restart
-  SHELL_EXIT
+  su tftp_user
   top
 }
 
