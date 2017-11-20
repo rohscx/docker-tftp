@@ -8,6 +8,10 @@ RUN apt-get install tftpd-hpa -y
 # Create TFTP config file
 RUN cp /etc/default/tftpd-hpa /etc/default/tftpd-hpa.ORIGINAL
 
+# restart tftpd-hpa service
+RUN echo "sleep 2" > /etc/rc.local
+RUN echo "service tftpd-hpa restart" > /etc/rc.local
+
 # Add TFTP user
 RUN adduser --disabled-password --gecos "" tftp_user
 
@@ -21,9 +25,7 @@ RUN chmod 777 /etc/default
 #
 RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
 
-# restart tftpd-hpa service
-RUN echo "sleep 2" > /etc/rc.local
-RUN echo "service tftpd-hpa restart" > /etc/rc.local
+
 
 #
 #RUN echo "tftp_user ALL = NOPASSWD: /etc/init.d/tftpd-hpa" >> /etc/sudoers
