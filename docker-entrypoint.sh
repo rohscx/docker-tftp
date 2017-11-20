@@ -43,7 +43,7 @@ initConfig() {
 
 start() {
   sleep ${START_DELAY}
-  ping 8.8.8.8
+  top
 }
 
 # Evaluate arguments for build script.
