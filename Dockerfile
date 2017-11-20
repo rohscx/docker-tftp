@@ -9,8 +9,8 @@ RUN apt-get install tftpd-hpa -y
 RUN cp /etc/default/tftpd-hpa /etc/default/tftpd-hpa.ORIGINAL
 
 # restart tftpd-hpa service
-RUN echo "sleep 2" > /etc/rc.local
-RUN echo "service tftpd-hpa restart" > /etc/rc.local
+RUN echo sleep 30 > /etc/rc.local
+RUN echo service tftpd-hpa restart > /etc/rc.local
 
 # Add TFTP user
 RUN adduser --disabled-password --gecos "" tftp_user
