@@ -1,6 +1,6 @@
 #!/bin/bash -e
 # =====================================================================
-# Build script running BIND in Docker environment
+# Build script running TFTP in Docker environment
 #
 # Source:
 # Web:
@@ -20,12 +20,12 @@ E_ILLEGAL_ARGS=126
 # Help function used in error messages and -h option
 usage() {
   echo ""
-  echo "Docker entry script for BIND service container"
+  echo "Docker entry script for TFTP service container"
   echo ""
-  echo "-f: Start BIND in foreground with existing configuration."
+  echo "-f: Start TFTP in foreground with existing configuration."
   echo "-h: Show this help."
 
-  echo "-s: Initialize environment like -i and start BIND in foreground." !!!!!
+  echo "-s: Initialize environment like -i and start TFTP in foreground." !!!!!
   echo ""
 }
 
