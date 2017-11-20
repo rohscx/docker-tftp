@@ -11,6 +11,7 @@ START_DELAY=5
 
 TFTP_EDITED=tftp_conf_edited
 TFTP_CONFIG=/etc/default/tftpd-hpa
+TFTP_USER_HOME=~/
 BIND_DNS_OG_CFG=named.conf.recursive
 BIND_DNS_NEW_CFG=named.conf
 
@@ -31,7 +32,7 @@ usage() {
 
 
 initConfig() {
-  if [ ! "$(ls --ignore .keys --ignore .authoritative --ignore .recursive --ignore -A ${TFTP_EDITED})"  ]; then
+  if [ ! "$(ls --ignore .keys --ignore .authoritative --ignore .recursive --ignore -A ${TFTP_USER_HOME})"  ]; then
     sed -i "s/--secure/--secure --create/" ${TFTP_CONFIG}
     touch ${TFTP_EDITED}
     echo "TFTP configuration initializing........."
