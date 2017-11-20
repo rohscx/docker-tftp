@@ -7,7 +7,8 @@
 #
 # =====================================================================
 
-START_DELAY=300
+START_DELAY=5
+i="0"
 
 TFTP_EDITED=tftp_conf_edited
 TFTP_CONFIG=/etc/default/tftpd-hpa
@@ -46,7 +47,11 @@ initConfig() {
 
 start() {
   sleep ${START_DELAY}
-
+  while [$i = 0]
+  do
+    sleep ${START_DELAY}
+    echo "Cats on Everything..."
+  done
 }
 
 # Evaluate arguments for build script.
