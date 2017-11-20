@@ -9,7 +9,7 @@ RUN apt-get install tftpd-hpa -y
 RUN cp /etc/default/tftpd-hpa /etc/default/tftpd-hpa.ORIGINAL
 # Grant edit rights to tftp file and read access to folder
 RUN chmod 777 /etc/default/tftpd-hpa
-RUN chmod -R 775 /etc/default/
+RUN chmod +t /etc/default/
 # Grant write access to tftp folder
 RUN chown -R tftp /var/lib/tftpboot
 
