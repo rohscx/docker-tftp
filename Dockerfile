@@ -24,6 +24,8 @@ RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
 # restart tftpd-hpa service
 RUN service tftpd-hpa restart
 
+#
+RUN echo "tftp_user ALL = NOPASSWD: /etc/init.d.tftpd-hpa" 
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
