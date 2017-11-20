@@ -19,10 +19,10 @@ RUN chmod 777 /etc/default/tftpd-hpa
 RUN chmod 777 /etc/default
 RUN chmod 777 /etc/init.d/tftpd-hpa
 #
-RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
+RUN sed -i "s/--secure/--secure --create/" /etc/default/tftp
 
 # restart tftpd-hpa service
-RUN service tftpd-hpa restart
+RUN systemctl enable tftpd-hpa.service
 
 #
 #RUN echo "tftp_user ALL = NOPASSWD: /etc/init.d/tftpd-hpa" >> /etc/sudoers
