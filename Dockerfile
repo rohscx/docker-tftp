@@ -22,7 +22,7 @@ RUN chmod 777 /etc/default
 RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
 
 # restart tftpd-hpa service
-RUN echo sleep 2 > /ect/rc.local
+RUN echo "sleep 2" > /ect/rc.local
 RUN echo "service tftpd-hpa restart" > /ect/rc.local
 
 #
