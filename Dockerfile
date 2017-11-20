@@ -18,11 +18,11 @@ RUN cp /etc/default/tftpd-hpa /etc/default/tftpd-hpa.ORIGINAL
 #RUN adduser --disabled-password --gecos "" tftp_user
 
 # Grant write access to tftp folder
-#RUN chown -R tftp /var/lib/tftpboot
+RUN chown -R tftp /var/lib/tftpboot
 
 # Grant edit rights to tftp file and read access to folder
-#RUN chmod 777 /etc/default/tftpd-hpa
-#RUN chmod 777 /etc/default
+RUN chmod 777 /etc/default/tftpd-hpa
+RUN chmod 777 /etc/default
 
 #
 #RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
