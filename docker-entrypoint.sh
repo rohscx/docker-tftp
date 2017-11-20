@@ -37,7 +37,7 @@ initConfig() {
     touch ${TFTP_EDITED}
     echo "TFTP configuration initializing........."
     service tftpd-hpa restart
-    ls
+    echo ls
   else
     echo "TFTP configuration already initialized........."
   fi
@@ -47,7 +47,7 @@ initConfig() {
 start() {
   i=0
   sleep ${START_DELAY}
-  while [$i = 0]
+  while [$i == 0]
   do
     sleep ${START_DELAY}
     echo "Cats on Everything..."
