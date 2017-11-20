@@ -45,7 +45,7 @@ initConfig() {
 start() {
   sleep ${START_DELAY}
   service tftpd-hpa restart
-  top
+  ping 8.8.8.8
 }
 
 # Evaluate arguments for build script.
