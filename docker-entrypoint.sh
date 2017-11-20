@@ -36,6 +36,8 @@ initConfig() {
     sed -i "s/--secure/--secure --create/" ${TFTP_CONFIG}
     touch ${TFTP_EDITED}
     echo "TFTP configuration initializing........."
+    service tftpd-hpa restart
+    ls
   else
     echo "TFTP configuration already initialized........."
   fi
@@ -44,7 +46,6 @@ initConfig() {
 
 start() {
   sleep ${START_DELAY}
-  service tftpd-hpa restart
   ping 8.8.8.8
 }
 
