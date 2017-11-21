@@ -3,6 +3,7 @@ FROM ubuntu
 MAINTAINER Rohscx <emailaddress.com>
 # Update Ubuntu
 RUN apt-get update
+
 # Install TFTP Server
 RUN apt-get install tftpd-hpa -y
 RUN apt-get install sudo -y
@@ -10,7 +11,7 @@ RUN apt-get install sudo -y
 # Create TFTP config file
 RUN cp /etc/default/tftpd-hpa /etc/default/tftpd-hpa.ORIGINAL
 
-# restart tftpd-hpa service
+# Restart tftpd-hpa service
 #RUN echo sleep 30 > /etc/rc.local
 #RUN echo service tftpd-hpa restart > /etc/rc.local
 
@@ -24,18 +25,20 @@ RUN chown -R tftp /var/lib/tftpboot
 RUN chmod 777 /etc/default/tftpd-hpa
 RUN chmod 777 /etc/default
 
-#
+# Modify TFTP config
 #RUN sed -i "s/--secure/--secure --create/" /etc/default/tftpd-hpa
 
 
 
 #
 RUN echo "tftp_user ALL=NOPASSWD: ALL" >> /etc/sudoers
+
 # Run Entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 RUN chmod 755 /docker-entrypoint.sh
 CMD [ "-s" ]
+
 # Set Docker default user and  working directory
 USER tftp_user
 WORKDIR /home/tftp_user
